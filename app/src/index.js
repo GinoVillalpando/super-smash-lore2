@@ -11,7 +11,6 @@ import {AboutUs} from "./pages/AboutUs";
 import {FighterInfo} from "./pages/FighterInfo";
 import {Favorites} from "./pages/Favorites";
 import {FighterSelection} from "./pages/FighterSelection";
-import {Fighters} from "./pages/Fighters";
 import {SignIn} from "./pages/SignIn";
 import {FighterCard} from "./shared/utils/FighterCard";
 import {NavBar} from "./shared/utils/NavBar";
@@ -22,7 +21,6 @@ import { applyMiddleware, createStore } from 'redux';
 import { combinedReducers } from './shared/reducers';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'
-// import {httpConfig} from "./shared/utils/http-config";
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {faHeart} from '@fortawesome/free-solid-svg-icons'
 
@@ -48,7 +46,6 @@ const Routing = (store) => (
 					<Route exact path="/fighter-selection" component={FighterSelection}/>
 					<Route exact path="./shared/FighterCard" component={FighterCard}/>
 					<Route exact path="/Email" component={EmailValidation}/>
-					<Route exact path="/test" component={Fighters}/>
 					<Route component={FourOhFour}/>
 				</Switch>
 			</BrowserRouter>
