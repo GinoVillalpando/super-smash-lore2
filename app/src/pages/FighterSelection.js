@@ -19,7 +19,7 @@ export const FighterSelection = () => {
         setSearchWord(e.target.value);
     };
 
-	const fighterState = useSelector(state => (state.characters ? state.characters : []));
+	const fighterState = useSelector(state => state.characters ? state.characters : []);
 
     const filteredFighters = fighterState.filter(character => character.characterName.toLowerCase().includes(searchWord));
 
@@ -52,7 +52,7 @@ export const FighterSelection = () => {
 							</Col>
 						</Row>
 					<Row>
-						{characters.map(character => (<FighterCard searchWord={searchWord} character={character}/>))}
+						{characters.map(character => (<FighterCard key={character.characterId} searchWord={searchWord} character={character}/>))}
 					</Row>
 				</Container>
 			</main>

@@ -20,15 +20,6 @@ export const getCharacterByFavoriteProfileId = (id) => async dispatch => {
 	dispatch({type: "GET_CHARACTER_BY_FAVORITE_PROFILE_ID", payload: data})
 };
 
-export const searchCharacterByName = (name) => (dispatch, getState) => {
-	const {characters} = getState();
-	const filteredCharacters = characters.filter(({characterName}) => characterName
-		.toLowerCase()
-		.includes(name.toLowerCase())
-	);
-	dispatch({type: "SEARCH_CHARACTER_BY_NAME", payload: filteredCharacters})
-};
-
 export const getCharacterByCharacterId = (id) => async dispatch => {
 	const {data} = await httpConfig(`/apis/character/${id}`);
 	dispatch({type: "GET_CHARACTER_BY_CHARACTER_ID", payload: data})
