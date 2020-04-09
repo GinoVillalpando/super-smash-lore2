@@ -5,9 +5,11 @@ import {FighterCard} from "../shared/utils/FighterCard";
 
 export const Fighters = ({searchWord}) => {
        
-    const fighterState = useSelector(state => (state.character ? state.character : []));
+    const fighterState = useSelector(state => (state.characters ? state.characters : []));
 
-    const filteredFighters = fighterState.filter(character => character.characterName.includes(searchWord));
+    const filteredFighters = fighterState.filter(character => character.characterName.toLowerCase().includes(searchWord));
+
+    console.log(filteredFighters);
 
     const characters = filteredFighters, dispatch = useDispatch();
 
@@ -21,7 +23,8 @@ export const Fighters = ({searchWord}) => {
 
     return (
         <>
-            {characters.map(character => <FighterCard key={character.characterId} character={character}/>)}
+            {characters.map(character => <FighterCard character={character}/>
+            )}
         </>
     )
 };

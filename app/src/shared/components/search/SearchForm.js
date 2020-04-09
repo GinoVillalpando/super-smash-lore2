@@ -17,7 +17,8 @@ export const SearchForm = ({setSearchWord}) => {
                     onSubmit={setWord}
                     />
             <Button className="btn btn-primary"
-                    variant="outline-dark">Go!</Button>
+                    variant="outline-dark"
+                    onSubmit={setWord}>Go!</Button>
         </>
     )
 };
